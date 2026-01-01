@@ -232,3 +232,55 @@ function correctTest() {
         <p>📊 Nota final: <strong>${score} / 10</strong></p>
     `;
 }
+// ===== ACTUALIZAR ESTADÍSTICAS =====
+function updateStats() {
+    // Simula incremento de usuarios
+    stats.usersToday += Math.floor(Math.random() * 3);
+    stats.testsCompleted += 1;
+    
+    // Recalcula promedio
+    let totalScore = 0;
+    for (let i = 0; i < questions.length; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected && selected.value === questions[i].correct) {
+            totalScore++;
+        }
+    }
+    stats.avgScore = ((totalScore / questions.length) * 10).toFixed(1);
+}
+
+// Llamar después de corregir un test
+function correctTest() {
+    let correct = 0;
+    let incorrect = 0;
+
+    questions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const block = document.getElementsByClassName("question-block")[index];
+
+        if (selected) {
+            if (selected.value === q.correct) {
+                correct++;
+                block.style.backgroundColor = "#d4edda";
+            } else {
+                incorrect++;
+                block.style.backgroundColor = "#f8d7da";
+            }
+        } else {
+            incorrect++;
+            block.style.backgroundColor = "#fff3cd";
+        }
+    });
+
+    const total = questions.length;
+    const score = ((correct / total) * 10).toFixed(2);
+
+    document.getElementById("result").innerHTML = `
+        <h3>Resultado del test</h3>
+        <p>✔️ Aciertos: ${correct}</p>
+        <p>❌ Errores: ${incorrect}</p>
+        <p>📊 Nota final: <strong>${score} / 10</strong></p>
+    `;
+    
+    updateStats(); // ← ACTUALIZA LAS ESTADÍSTICAS
+}
