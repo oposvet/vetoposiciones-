@@ -239,3 +239,7 @@ window.addEventListener("load", function () {
     hideAdminFeatures();
     displayStats();
 });
+function scrollToTest() {
+    startTest();
+    document.getElementById("test").scrollIntoView({ behavior: "smooth" });
+}
