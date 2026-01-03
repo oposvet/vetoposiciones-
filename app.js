@@ -1,5 +1,7 @@
 // ===== SISTEMA DE ACCESO ADMIN =====
-const ADMIN_PASSWORD = "vetoposiciones2026";
+// CONTRASEÑA VISIBLE EN GITHUB (segura)
+const ADMIN_PASSWORD = "admin123";
+// TU CONTRASEÑA REAL: supervet2026
 let isAdmin = false;
 
 function checkAdmin() {
