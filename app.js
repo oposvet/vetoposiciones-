@@ -50,7 +50,7 @@ function updateCategoryFilter() {
 
     const categories = [
         "🍖 Higiene y Seguridad Alimentaria",
-        "🐄 Sanidad Animal",
+        "🐄 Bienestar Animal",
         "📋 Legislación"
     ];
 
