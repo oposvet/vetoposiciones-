@@ -1,15 +1,16 @@
 [
   {
-    "question": "¿A partir de qué momento una hembra preñada se considera no apta para el transporte según el Reglamento (CE) nº 1/2005?, , ",[11]
+    "question": "¿A partir de qué momento una hembra preñada se considera no apta para el transporte según el Reglamento (CE) nº 1/2005?",
     "a": "Cuando ha superado el 50 % de la gestación.",
     "b": "Cuando ha superado el 90 % o más del tiempo de gestación previsto.",
     "c": "Durante todo el último tercio de gestación.",
     "d": "Solo si muestra signos de parto inminente.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [11]
   },
   {
-    "question": "¿Cuál es el tiempo de espera mínimo recomendado por la EFSA para abrir el útero tras la muerte de la madre para garantizar la muerte del feto por hipoxia? , , ",
+    "question": "¿Cuál es el tiempo de espera mínimo recomendado por la EFSA para abrir el útero tras la muerte de la madre para garantizar la muerte del feto por hipoxia?",
     "a": "5 minutos.",
     "b": "15 minutos.",
     "c": "30 minutos.",
@@ -18,7 +19,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "Según el dictamen de la EFSA, ¿qué probabilidad existe de que los fetos en el último tercio de gestación tengan las estructuras anatómicas para sentir dolor? , , ",
+    "question": "Según el dictamen de la EFSA, ¿qué probabilidad existe de que los fetos en el último tercio de gestación tengan las estructuras anatómicas para sentir dolor?",
     "a": "Entre un 33% y un 66%.",
     "b": "Entre un 66% y un 99%.",
     "c": "Entre un 90% y un 100%.",
@@ -27,7 +28,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cuál es la probabilidad estimada por la EFSA de que la situación neurofisiológica del feto NO permita la percepción consciente? , , ",
+    "question": "¿Cuál es la probabilidad estimada por la EFSA de que la situación neurofisiológica del feto NO permita la percepción consciente?",
     "a": "1% al 33%.",
     "b": "33% al 66%.",
     "c": "66% al 99%.",
@@ -36,7 +37,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "En caso de detectar un feto vivo al abrir el útero después de 30 minutos, ¿qué se debe hacer? , , ",
+    "question": "En caso de detectar un feto vivo al abrir el útero después de 30 minutos, ¿qué se debe hacer?",
     "a": "Esperar otros 15 minutos.",
     "b": "Aturdirlo y matarlo inmediatamente según el Reglamento 1099/2009.",
     "c": "Devolverlo al útero para que muera por anoxia.",
@@ -45,7 +46,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué sustancia química actúa como un potente supresor del EEG y promotor del sueño en el feto? , , ",
+    "question": "¿Qué sustancia química actúa como un potente supresor del EEG y promotor del sueño en el feto?",
     "a": "Adrenalina.",
     "b": "Cortisol.",
     "c": "Adenosina.",
@@ -54,7 +55,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cuál es el tiempo máximo de permanencia de los animales en el matadero previo al sacrificio con carácter general en España? , ",
+    "question": "¿Cuál es el tiempo máximo de permanencia de los animales en el matadero previo al sacrificio con carácter general en España?",
     "a": "12 horas.",
     "b": "24 horas.",
     "c": "48 horas.",
@@ -63,7 +64,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Durante cuánto tiempo debe el operador del matadero conservar las grabaciones del SVBA? , ",
+    "question": "¿Durante cuánto tiempo debe el operador del matadero conservar las grabaciones del SVBA?",
     "a": "72 horas.",
     "b": "Un mes.",
     "c": "Un año.",
@@ -72,7 +73,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "Si se produce una avería en el sistema de videovigilancia y no puede repararse, ¿cuál es el plazo máximo para sustituir el equipo? , ",
+    "question": "Si se produce una avería en el sistema de videovigilancia y no puede repararse, ¿cuál es el plazo máximo para sustituir el equipo?",
     "a": "48 horas.",
     "b": "5 días.",
     "c": "10 días.",
@@ -81,43 +82,47 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué zona está exceptuada de la obligación de disponer de cámaras de videovigilancia? , ",[3]
+    "question": "¿Qué zona está exceptuada de la obligación de disponer de cámaras de videovigilancia?",
     "a": "Los pasillos de conducción.",
     "b": "Las instalaciones de aturdimiento.",
     "c": "Las zonas de espera de vehículos antes de iniciar la descarga.",
     "d": "La zona de sangrado.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [3]
   },
   {
-    "question": "¿Cuál es la prevalencia mediana estimada de vacas lecheras sacrificadas en el último tercio de gestación en Europa? ,, ",[4][5]
+    "question": "¿Cuál es la prevalencia mediana estimada de vacas lecheras sacrificadas en el último tercio de gestación en Europa?",
     "a": "0.5%.",
     "b": "1.5%.",
     "c": "3%.",
     "d": "16%.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [4, 5]
   },
   {
-    "question": "Para que una hembra ovina sea apta para el transporte, ¿cuánto tiempo debe haber pasado desde el parto?,, ",[6][7][11]
+    "question": "Para que una hembra ovina sea apta para el transporte, ¿cuánto tiempo debe haber pasado desde el parto?",
     "a": "Al menos 48 horas.",
     "b": "Más de una semana.",
     "c": "Dos semanas.",
     "d": "Un mes.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [6, 7, 11]
   },
   {
-    "question": "¿Cuál es la duración mínima de los cursos de formación para el certificado de competencia de conductores y cuidadores?, ",[8][9]
+    "question": "¿Cuál es la duración mínima de los cursos de formación para el certificado de competencia de conductores y cuidadores?",
     "a": "10 horas.",
     "b": "15 horas.",
     "c": "20 horas.",
     "d": "40 horas.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [8, 9]
   },
   {
-    "question": "¿Qué resolución debe tener el sistema de videovigilancia (SVBA)? , ",
+    "question": "¿Qué resolución debe tener el sistema de videovigilancia (SVBA)?",
     "a": "Suficiente para identificar personas, equipos, animales y manipulaciones.",
     "b": "4K obligatoriamente.",
     "c": "Cualquier resolución es válida si graba en color.",
@@ -126,7 +131,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué animales tienen prioridad para ser sacrificados según el Reglamento 1099/2009? , ",
+    "question": "¿Qué animales tienen prioridad para ser sacrificados según el Reglamento 1099/2009?",
     "a": "Los animales más grandes.",
     "b": "Animales no destetados y hembras que hayan parido durante el trayecto.",
     "c": "Los animales procedentes de trayectos cortos.",
@@ -135,7 +140,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "En el sacrificio de bovinos, ¿qué sistema de sujeción está prohibido salvo para ritos religiosos? , ",
+    "question": "En el sacrificio de bovinos, ¿qué sistema de sujeción está prohibido salvo para ritos religiosos?",
     "a": "Boxes individuales.",
     "b": "Sujeción de la cabeza.",
     "c": "Sistemas por inversión o posiciones no naturales.",
@@ -144,16 +149,17 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿A qué distancia máxima de transporte los terneros menores de 10 días se consideran aptos para el transporte?,, ",[7][6][11]
+    "question": "¿A qué distancia máxima de transporte los terneros menores de 10 días se consideran aptos para el transporte?",
     "a": "Menos de 50 km.",
     "b": "Menos de 65 km.",
     "c": "Menos de 100 km.",
     "d": "Siempre son no aptos.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [7, 6, 11]
   },
   {
-    "question": "¿Cuál es la frecuencia mínima de imágenes por segundo que debe generar el SVBA? ",
+    "question": "¿Cuál es la frecuencia mínima de imágenes por segundo que debe generar el SVBA?",
     "a": "5 imágenes.",
     "b": "10 imágenes.",
     "c": "15 imágenes.",
@@ -162,7 +168,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué parámetro fetal es el más fiable para estimar la edad gestacional según la EFSA? , , ",
+    "question": "¿Qué parámetro fetal es el más fiable para estimar la edad gestacional según la EFSA?",
     "a": "Longitud de los huesos largos.",
     "b": "Peso total del feto.",
     "c": "Características externas como la cobertura de pelo.",
@@ -171,7 +177,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué sucede si un animal no puede caminar al llegar al matadero? , , ",
+    "question": "¿Qué sucede si un animal no puede caminar al llegar al matadero?",
     "a": "Se descarga con una carretilla.",
     "b": "Se le arrastra hasta la zona de aturdimiento.",
     "c": "Se le sacrifica o mata in situ.",
@@ -180,7 +186,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué porcentaje adicional de espacio deben tener las hembras preñadas durante el transporte? ",
+    "question": "¿Qué porcentaje adicional de espacio deben tener las hembras preñadas durante el transporte?",
     "a": "5%.",
     "b": "10%.",
     "c": "15%.",
@@ -189,7 +195,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cuándo se requiere obligatoriamente un Encargado de Bienestar Animal (EBA) en un matadero? , ",
+    "question": "¿Cuándo se requiere obligatoriamente un Encargado de Bienestar Animal (EBA) en un matadero?",
     "a": "En todos los mataderos sin excepción.",
     "b": "Si sacrifican más de 1000 unidades de ganado mamífero al año.",
     "c": "Solo en mataderos de aves de corral.",
@@ -198,7 +204,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué método de aturdimiento es el único permitido para mamíferos mediante gas en la UE? , ",
+    "question": "¿Qué método de aturdimiento es el único permitido para mamíferos mediante gas en la UE?",
     "a": "Argón.",
     "b": "Nitrógeno.",
     "c": "Dióxido de carbono (CO2) a altas concentraciones.",
@@ -207,7 +213,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cuál es la concentración mínima de CO2 para el aturdimiento de cerdos? , ",
+    "question": "¿Cuál es la concentración mínima de CO2 para el aturdimiento de cerdos?",
     "a": "40%.",
     "b": "60%.",
     "c": "80%.",
@@ -216,7 +222,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cuánto tiempo debe estar disponible el agua para los mamíferos en el matadero? , ",
+    "question": "¿Cuánto tiempo debe estar disponible el agua para los mamíferos en el matadero?",
     "a": "Solo 2 horas antes del sacrificio.",
     "b": "Permanentemente.",
     "c": "Cada 12 horas.",
@@ -225,16 +231,17 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿En qué momento deben alimentarse los animales estabulados en el matadero?, , ",[10]
+    "question": "¿En qué momento deben alimentarse los animales estabulados en el matadero?",
     "a": "A las 6 horas de su llegada.",
     "b": "Si no han sido sacrificados en las 12 horas siguientes a su llegada.",
     "c": "A las 24 horas obligatoriamente.",
     "d": "Nunca se alimentan en el matadero.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "sources": [10]
   },
   {
-    "question": "¿Cuál es la medida C-R aproximada de un feto porcino a los 110 días de gestación? ",
+    "question": "¿Cuál es la medida C-R aproximada de un feto porcino a los 110 días de gestación?",
     "a": "135 mm.",
     "b": "170 mm.",
     "c": "207 mm.",
@@ -243,7 +250,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Qué indica la presencia de seis incisivos erupcionados en un feto bovino? , ",
+    "question": "¿Qué indica la presencia de seis incisivos erupcionados en un feto bovino?",
     "a": "Que tiene 5 meses de gestación.",
     "b": "Probabilidad del 97% de estar en el último 10% de la gestación.",
     "c": "Que el feto es un neonato viable.",
@@ -252,7 +259,7 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cuánto dura la validez del certificado de aprobación de un medio de transporte para viajes largos? , , ",
+    "question": "¿Cuánto dura la validez del certificado de aprobación de un medio de transporte para viajes largos?",
     "a": "1 año.",
     "b": "2 años.",
     "c": "5 años.",
@@ -261,14 +268,12 @@
     "category": "🐄 Bienestar Animal"
   },
   {
-    "question": "¿Cómo se define el término 'sacrificio' en la normativa? , , ",
+    "question": "¿Cómo se define el término 'sacrificio' en la normativa?",
     "a": "Matanza de animales mediante ritos.",
     "b": "Matanza de animales destinada al consumo humano.",
     "c": "Cualquier proceso que cause la muerte de un animal.",
     "d": "Matanza solo por motivos de salud animal.",
     "correct": "B",
     "category": "🐄 Bienestar Animal"
-  },
-  {
-    "question": "¿Qué profesional es el responsable final de las decisiones de bienestar en el matadero tras los controles oficiales? , ",
-    "a": "El encargado de bienestar animal (EBA).
+  }
+]
