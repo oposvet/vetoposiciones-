@@ -7,6 +7,7 @@
     "d": "Solo si muestra signos de parto inminente.",
     "correct": "B",
     "category": "🐄 Bienestar Animal",
+    "sources": [11]
   },
   {
     "question": "¿Cuál es el tiempo de espera mínimo recomendado por la EFSA para abrir el útero tras la muerte de la madre para garantizar la muerte del feto por hipoxia?",
@@ -88,6 +89,7 @@
     "d": "La zona de sangrado.",
     "correct": "C",
     "category": "🐄 Bienestar Animal",
+    "sources": [3]
   },
   {
     "question": "¿Cuál es la prevalencia mediana estimada de vacas lecheras sacrificadas en el último tercio de gestación en Europa?",
@@ -97,6 +99,7 @@
     "d": "16%.",
     "correct": "C",
     "category": "🐄 Bienestar Animal",
+    "sources": [4, 5]
   },
   {
     "question": "Para que una hembra ovina sea apta para el transporte, ¿cuánto tiempo debe haber pasado desde el parto?",
@@ -106,6 +109,7 @@
     "d": "Un mes.",
     "correct": "B",
     "category": "🐄 Bienestar Animal",
+    "sources": [6, 7, 11]
   },
   {
     "question": "¿Cuál es la duración mínima de los cursos de formación para el certificado de competencia de conductores y cuidadores?",
@@ -115,6 +119,7 @@
     "d": "40 horas.",
     "correct": "C",
     "category": "🐄 Bienestar Animal",
+    "sources": [8, 9]
   },
   {
     "question": "¿Qué resolución debe tener el sistema de videovigilancia (SVBA)?",
@@ -151,6 +156,7 @@
     "d": "Siempre son no aptos.",
     "correct": "C",
     "category": "🐄 Bienestar Animal",
+    "sources": [7, 6, 11]
   },
   {
     "question": "¿Cuál es la frecuencia mínima de imágenes por segundo que debe generar el SVBA?",
@@ -232,6 +238,7 @@
     "d": "Nunca se alimentan en el matadero.",
     "correct": "B",
     "category": "🐄 Bienestar Animal",
+    "sources": [10]
   },
   {
     "question": "¿Cuál es la medida C-R aproximada de un feto porcino a los 110 días de gestación?",
@@ -270,3 +277,4 @@
     "category": "🐄 Bienestar Animal"
   }
 ]
+
