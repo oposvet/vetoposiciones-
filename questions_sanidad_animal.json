@@ -1,0 +1,92 @@
+[
+  {
+    "question": "¿Cuál es el agente causal más común de brucelosis en el ganado bovino?",
+    "a": "Brucella abortus.",
+    "b": "Brucella melitensis.",
+    "c": "Brucella suis.",
+    "d": "Brucella canis.",
+    "correct": "A",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Cuál es la enfermedad vehiculada por el virus del Nilo Occidental que afecta principalmente a équidos?",
+    "a": "Fiebre del Nilo Occidental.",
+    "b": "Encefalitis equina del Oeste.",
+    "c": "Rabia.",
+    "d": "Pseudorabia.",
+    "correct": "A",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Qué enfermedad se caracteriza por vesículas en el hocico, pezuñas y ubres de rumiantes?",
+    "a": "Estomatitis vesicular.",
+    "b": "Fiebre aftosa.",
+    "c": "Enfermedad vesicular del cerdo.",
+    "d": "Rabia.",
+    "correct": "B",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Cuál es el período de incubación medio de la tuberculosis bovina?",
+    "a": "2-4 semanas.",
+    "b": "4-12 semanas.",
+    "c": "3-6 meses.",
+    "d": "1-2 años.",
+    "correct": "C",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Qué bacteria es responsable de la enfermedad de Aujeszky en cerdos?",
+    "a": "Herpesvirus suino 1 (SuHV-1).",
+    "b": "Virus de la Peste Porcina Africana.",
+    "c": "Virus de la Peste Porcina Clásica.",
+    "d": "Parvovirus porcino.",
+    "correct": "A",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Cuál es el principal vector de la Piroplasmosis en el ganado vacuno?",
+    "a": "Mosca tsetsé.",
+    "b": "Garrapata Boophilus.",
+    "c": "Mosquito Anopheles.",
+    "d": "Tabanidae.",
+    "correct": "B",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Qué enfermedad zoonótica causa la leptospira en ganado?",
+    "a": "Leptospirosis.",
+    "b": "Ántrax.",
+    "c": "Tuberculosis.",
+    "d": "Brucelosis.",
+    "correct": "A",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Cuál es el síntoma característico de la enfermedad de Marek en aves?",
+    "a": "Parálisis progresiva.",
+    "b": "Diarrea verde.",
+    "c": "Inflamación de las articulaciones.",
+    "d": "Pérdida total de plumas.",
+    "correct": "A",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Qué microorganismo causa la mastitis bovina más frecuentemente?",
+    "a": "Escherichia coli.",
+    "b": "Staphylococcus aureus.",
+    "c": "Streptococcus agalactiae.",
+    "d": "Corynebacterium bovis.",
+    "correct": "B",
+    "category": "🦠 Sanidad Animal"
+  },
+  {
+    "question": "¿Cuál es la vía de transmisión principal de la Enfermedad de Borna en caballos?",
+    "a": "Contacto directo con saliva.",
+    "b": "Inhalación de partículas virulentas.",
+    "c": "Aún se desconoce con precisión.",
+    "d": "Inoculación accidental.",
+    "correct": "C",
+    "category": "🦠 Sanidad Animal"
+  }
+]
