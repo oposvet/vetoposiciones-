@@ -56,25 +56,25 @@ const novedades = [
   },
   {
     fecha: "04/01/2026",
-    titulo: "🐄 Bienestar Animal (questions_bienestar_animal.json)",
+    titulo: "🐄 Bienestar Animal",
     descripcion:
       "10 preguntas sobre transporte de animales, sacrificio humanitario y videovigilancia en mataderos.",
   },
   {
     fecha: "04/01/2026",
-    titulo: "🍗 Higiene Alimentaria (questions_higiene_alimentaria.json)",
+    titulo: "🍗 Higiene Alimentaria",
     descripcion:
       "10 preguntas sobre temperaturas, APPCC, patógenos y límites microbiológicos.",
   },
   {
     fecha: "04/01/2026",
-    titulo: "🏷️ Etiquetado (questions_etiquetado.json)",
+    titulo: "🏷️ Etiquetado",
     descripcion:
       "10 preguntas sobre Reglamento (UE) 1169/2011, alérgenos, códigos E y marcado de establecimiento.",
   },
   {
     fecha: "04/01/2026",
-    titulo: "🦠 Sanidad Animal (questions_sanidad_animal.json)",
+    titulo: "🦠 Sanidad Animal",
     descripcion:
       "10 preguntas sobre enfermedades virales, bacterianas, zoonosis y vectores en ganado.",
   },
