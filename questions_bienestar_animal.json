@@ -275,6 +275,97 @@
     "d": "Matanza solo por motivos de salud animal.",
     "correct": "B",
     "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿A partir de qué momento una hembra preñada se considera no apta para el transporte según el Reglamento (CE) nº 1/2005?",
+    "a": "Cuando ha superado el 50 % de la gestación.",
+    "b": "Cuando ha superado el 90 % o más del tiempo de gestación previsto.",
+    "c": "Durante todo el último tercio de gestación.",
+    "d": "Solo si muestra signos de parto inminente.",
+    "correct": "B",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Cuál es el tiempo de espera mínimo recomendado por la EFSA para abrir el útero tras la muerte de la madre para garantizar la muerte del feto por hipoxia?",
+    "a": "5 minutos.",
+    "b": "15 minutos.",
+    "c": "30 minutos.",
+    "d": "60 minutos.",
+    "correct": "C",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "Según el dictamen de la EFSA, ¿qué probabilidad existe de que los fetos en el último tercio de gestación tengan las estructuras anatómicas para sentir dolor?",
+    "a": "Entre un 33% y un 66%.",
+    "b": "Entre un 66% y un 99%.",
+    "c": "Entre un 90% y un 100%.",
+    "d": "Es totalmente incierto.",
+    "correct": "C",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Cuál es la probabilidad estimada por la EFSA de que la situación neurofisiológica del feto NO permita la percepción consciente?",
+    "a": "1% al 33%.",
+    "b": "33% al 66%.",
+    "c": "66% al 99%.",
+    "d": "99% al 100%.",
+    "correct": "C",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "En caso de detectar un feto vivo al abrir el útero después de 30 minutos, ¿qué se debe hacer?",
+    "a": "Esperar otros 15 minutos.",
+    "b": "Aturdirlo y matarlo inmediatamente según el Reglamento 1099/2009.",
+    "c": "Devolverlo al útero para que muera por anoxia.",
+    "d": "Ignorarlo, ya que legalmente no es un animal.",
+    "correct": "B",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Cuál es el tiempo máximo de permanencia de los animales en el matadero previo al sacrificio con carácter general en España?",
+    "a": "12 horas.",
+    "b": "24 horas.",
+    "c": "48 horas.",
+    "d": "72 horas.",
+    "correct": "C",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Qué método de aturdimiento es el único permitido para mamíferos mediante gas en la UE?",
+    "a": "Argón.",
+    "b": "Nitrógeno.",
+    "c": "Dióxido de carbono (CO2) a altas concentraciones.",
+    "d": "Monóxido de carbono.",
+    "correct": "C",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Cuánto tiempo debe estar disponible el agua para los mamíferos en el matadero?",
+    "a": "Solo 2 horas antes del sacrificio.",
+    "b": "Permanentemente.",
+    "c": "Cada 12 horas.",
+    "d": "No es necesaria si se sacrifican rápido.",
+    "correct": "B",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Cuándo se requiere obligatoriamente un Encargado de Bienestar Animal (EBA) en un matadero?",
+    "a": "En todos los mataderos sin excepción.",
+    "b": "Si sacrifican más de 1000 unidades de ganado mamífero al año.",
+    "c": "Solo en mataderos de aves de corral.",
+    "d": "Si tienen más de 50 trabajadores.",
+    "correct": "B",
+    "category": "🐄 Bienestar Animal"
+  },
+  {
+    "question": "¿Cómo se define el término 'sacrificio' en la normativa?",
+    "a": "Matanza de animales mediante ritos.",
+    "b": "Matanza de animales destinada al consumo humano.",
+    "c": "Cualquier proceso que cause la muerte de un animal.",
+    "d": "Matanza solo por motivos de salud animal.",
+    "correct": "B",
+    "category": "🐄 Bienestar Animal"
   }
 ]
+
 
