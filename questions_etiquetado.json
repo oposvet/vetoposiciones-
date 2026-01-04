@@ -1,0 +1,92 @@
+[
+  {
+    "question": "Según el Reglamento (CE) 854/2004, ¿qué información obligatoria debe aparecer en la etiqueta de carne fresca?",
+    "a": "Solo el nombre común.",
+    "b": "Nombre común, país de origen e identificación del lote.",
+    "c": "Solo el precio.",
+    "d": "Nombre científico y distribuidor.",
+    "correct": "B",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "¿Cuál es el tamaño mínimo de letra para la información nutricional en etiquetas de productos cárnicos?",
+    "a": "8 puntos.",
+    "b": "10 puntos.",
+    "c": "12 puntos.",
+    "d": "No hay límite mínimo.",
+    "correct": "A",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "Según el Reglamento (UE) 1169/2011, ¿qué es un alérgeno declarable en productos cárnicos?",
+    "a": "Solo los derivados de cereales.",
+    "b": "Solo los derivados de huevo.",
+    "c": "Cualquier sustancia que cause reacciones adversas en personas sensibles.",
+    "d": "Solo aditivos químicos.",
+    "correct": "C",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "¿Qué significa la marcación 'EC' en la etiqueta de un producto cárnico?",
+    "a": "Establecimiento comercial.",
+    "b": "Establecimiento Comunitario con autorización oficial.",
+    "c": "Empresa controlada.",
+    "d": "Estado Comunicante.",
+    "correct": "B",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "¿Cuál es el símbolo de identificación de alérgeno en productos cárnicos que contienen soja?",
+    "a": "Un triángulo naranja.",
+    "b": "Una cruz roja.",
+    "c": "Letra 'S' en color negro.",
+    "d": "No existe un símbolo único obligatorio.",
+    "correct": "D",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "Según la normativa, ¿qué dato NO es obligatorio en la etiqueta de jamón curado?",
+    "a": "Nombre del producto.",
+    "b": "País de origen.",
+    "c": "Identidad del importador.",
+    "d": "Peso neto aproximado.",
+    "correct": "C",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "¿Cuál es el código para identificar 'Conservante: E-200 (ácido sórbico)' en una etiqueta de embutido?",
+    "a": "E-100.",
+    "b": "E-200.",
+    "c": "E-300.",
+    "d": "E-400.",
+    "correct": "B",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "¿Qué información sobre sostenibilidad es obligatoria en etiquetas de productos cárnicos según la UE?",
+    "a": "Todas las prácticas sostenibles aplicadas.",
+    "b": "Solo si el fabricante lo desea voluntariamente.",
+    "c": "Solo emisiones de CO2.",
+    "d": "No es obligatoria.",
+    "correct": "D",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "¿Cuál es el formato obligatorio para la fecha de consumo preferente en productos cárnicos refrigerados?",
+    "a": "DD/MM/AAAA.",
+    "b": "Mes y año.",
+    "c": "Solo la semana.",
+    "d": "Puede ser cualquier formato.",
+    "correct": "A",
+    "category": "🏷️ Etiquetado"
+  },
+  {
+    "question": "Según la normativa, ¿qué información debe aparecer en los embutidos denominados 'jamón'?",
+    "a": "Solo la marca comercial.",
+    "b": "Tipo de jamón, período de curación y zona de origen protegida si aplica.",
+    "c": "Solo el precio.",
+    "d": "No hay requisitos específicos.",
+    "correct": "B",
+    "category": "🏷️ Etiquetado"
+  }
+]
