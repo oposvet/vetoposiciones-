@@ -10,7 +10,7 @@ const MAX_QUESTIONS = 10; // número máximo de preguntas por test
 
 const novedades = [
   {
-    fecha: "03/01/2026",
+    fecha: "04/01/2026",
     titulo: "Nuevas preguntas de bienestar animal",
     descripcion:
       "Actualización conforme a normativa básica estatal y reglamentos europeos vigentes.",
