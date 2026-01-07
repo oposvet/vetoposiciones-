@@ -14,6 +14,7 @@
     <title>VetOposiciones · Test Veterinaria</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- ================= HEADER ================= -->
     <header
@@ -135,6 +136,7 @@
           >
             📚 Selecciona categoría
           </label>
+
           <select
             id="category-filter"
             style="
@@ -147,77 +149,6 @@
           >
             <option value="all">📚 Todas las categorías</option>
           </select>
-        </div>
-
-        <!-- MASCOTA -->
-        <div id="mascot-card" class="mascot-card" aria-live="polite">
-          <div class="mascot-left">
-            <div id="mascot-emoji" class="mascot-emoji" title="Mascota">
-              🩺
-            </div>
-
-            <div class="mascot-avatar" aria-hidden="true">
-              <!-- Avatar SVG sencillo con parpadeo -->
-              <svg
-                width="72"
-                height="72"
-                viewBox="0 0 120 120"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#667eea" />
-                    <stop offset="1" stop-color="#764ba2" />
-                  </linearGradient>
-                </defs>
-
-                <!-- cabeza -->
-                <circle cx="60" cy="60" r="46" fill="url(#g1)" opacity="0.95" />
-                <circle cx="60" cy="60" r="44" fill="white" opacity="0.12" />
-
-                <!-- mejillas -->
-                <circle cx="38" cy="70" r="7" fill="#ff8fab" opacity="0.35" />
-                <circle cx="82" cy="70" r="7" fill="#ff8fab" opacity="0.35" />
-
-                <!-- ojos -->
-                <ellipse class="eye" cx="45" cy="55" rx="6" ry="6" fill="#1f2d3d">
-                  <animate
-                    attributeName="ry"
-                    values="6;6;0.6;6"
-                    keyTimes="0;0.45;0.5;0.55"
-                    dur="5.5s"
-                    repeatCount="indefinite"
-                  />
-                </ellipse>
-                <ellipse class="eye" cx="75" cy="55" rx="6" ry="6" fill="#1f2d3d">
-                  <animate
-                    attributeName="ry"
-                    values="6;6;0.6;6"
-                    keyTimes="0;0.47;0.52;0.57"
-                    dur="6.2s"
-                    repeatCount="indefinite"
-                  />
-                </ellipse>
-
-                <!-- sonrisa -->
-                <path
-                  d="M45 78 C55 88, 65 88, 75 78"
-                  fill="none"
-                  stroke="#1f2d3d"
-                  stroke-width="5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div class="mascot-right">
-            <div class="mascot-title">
-              <span id="mascot-name">Vito</span>
-              <span class="mascot-subtitle">tu compi de oposiciones</span>
-            </div>
-            <div id="mascot-message" class="mascot-message"></div>
-          </div>
         </div>
 
         <!-- RESUMEN DE PREGUNTAS -->
@@ -235,80 +166,4 @@
             📊 Banco de preguntas
           </div>
 
-          <div id="stats-top" style="color: #333; line-height: 1.5"></div>
-
-          <div
-            id="questions-by-category"
-            style="margin-top: 10px; color: #555"
-          ></div>
-        </div>
-
-        <!-- INICIAR TEST -->
-        <button
-          id="startBtn"
-          onclick="startTest()"
-          style="
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 20px;
-          "
-        >
-          ▶ Iniciar test
-        </button>
-
-        <!-- CONTENEDOR DEL TEST -->
-        <div id="test" style="margin-bottom: 20px"></div>
-
-        <!-- CORREGIR -->
-        <button
-          id="correctBtn"
-          onclick="correctTest()"
-          style="
-            background: #28a745;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: none;
-          "
-        >
-          ✔ Corregir test
-        </button>
-
-        <!-- RESULTADO -->
-        <div id="result" style="font-weight: bold"></div>
-      </section>
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer
-      style="
-        background: #f8f9fa;
-        padding: 20px;
-        text-align: center;
-        font-size: 12px;
-        color: #666;
-        border-top: 1px solid #ddd;
-      "
-    >
-      <p>
-        Plataforma creada con fines formativos ·
-        <a href="#" style="color: #667eea; text-decoration: none">Contacto</a>
-      </p>
-      <p>2026 · VetOposiciones</p>
-    </footer>
-
-    <!-- Tu JS principal -->
-    <script src="app.js" defer></script>
-  </body>
-</html>
+          <div id="stats-top" sty
