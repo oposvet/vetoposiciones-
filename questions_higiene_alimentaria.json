@@ -6,7 +6,9 @@
     "c": "-18°C o inferior.",
     "d": "-20°C o inferior.",
     "correct": "C",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "El Reglamento (CE) 852/2004 especifica que la carne de ave congelada debe mantenerse a una temperatura de -18°C o inferior para preservar su calidad y seguridad microbiológica.",
+    "source": "Reglamento (CE) nº 852/2004, Anexo II"
   },
   {
     "question": "¿Cuál es el tiempo máximo de almacenamiento a refrigeración (entre 0°C y 4°C) para carne fresca sin tratamiento?",
@@ -15,7 +17,9 @@
     "c": "5 días.",
     "d": "7 días.",
     "correct": "B",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "La carne fresca sin tratamiento tecnológico debe consumirse o congelarse en un máximo de 3 días cuando se mantiene a una temperatura de refrigeración entre 0°C y 4°C.",
+    "source": "Reglamento (CE) nº 852/2004, Anexo II, Capítulo V"
   },
   {
     "question": "Según el Reglamento (CE) 2073/2005, ¿cuál es el límite máximo de Listeria monocytogenes en alimentos listos para el consumo?",
@@ -24,7 +28,9 @@
     "c": "10.000 UFC/g.",
     "d": "100.000 UFC/g.",
     "correct": "A",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "El Reglamento 2073/2005 establece un límite máximo de 100 UFC/g de Listeria monocytogenes en alimentos listos para el consumo para garantizar la seguridad del consumidor.",
+    "source": "Reglamento (CE) nº 2073/2005, Criterios microbiológicos"
   },
   {
     "question": "¿Cuál es el nivel de pH mínimo que debe tener un alimento para permitir el crecimiento de Clostridium botulinum?",
@@ -33,7 +39,9 @@
     "c": "pH 6.0 o superior.",
     "d": "pH 7.0 o superior.",
     "correct": "A",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "Clostridium botulinum no puede crecer en alimentos con pH inferior a 4.6. Este conocimiento es fundamental para los tratamientos de conservación como enlatado y pasteurización.",
+    "source": "FDA Guidelines on Clostridium botulinum y ICMSF (2002)"
   },
   {
     "question": "¿Qué microorganismo es el principal responsable de la salmonelosis en productos cárnicos?",
@@ -42,7 +50,9 @@
     "c": "Salmonella choleraesuis.",
     "d": "Salmonella paratyphi.",
     "correct": "B",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "Salmonella enteritidis es la serovariedad más común causante de salmonelosis en productos cárnicos, especialmente en derivados de aves de corral.",
+    "source": "EFSA (2019) - The European Union summary report on trends and sources of zoonoses"
   },
   {
     "question": "Según la normativa APPCC, ¿cuál es el número mínimo de Puntos Críticos de Control (PCC) en una planta de procesamiento de carne?",
@@ -51,7 +61,9 @@
     "c": "Mínimo tres.",
     "d": "Depende del tipo de carne.",
     "correct": "D",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "El número de Puntos Críticos de Control depende del proceso específico, el tipo de carne y los tratamientos aplicados. No hay un número mínimo fijo, sino que debe determinarse mediante análisis de riesgos.",
+    "source": "ISO 22000:2018 - Sistemas de gestión de inocuidad alimentaria"
   },
   {
     "question": "¿Cuál es la concentración máxima de sulfitos permitida en carne picada según la normativa UE?",
@@ -60,7 +72,9 @@
     "c": "150 mg/kg.",
     "d": "200 mg/kg.",
     "correct": "A",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "El Reglamento (CE) nº 1333/2008 prohíbe el uso de sulfitos en carne picada debido a los riesgos para la salud, especialmente en asmáticos.",
+    "source": "Reglamento (CE) nº 1333/2008, Anexo II"
   },
   {
     "question": "¿Qué patógeno es responsable de la mayoría de brotes de gastroenteritis asociados a productos cárnicos crudos o poco cocidos?",
@@ -69,7 +83,9 @@
     "c": "Salmonella spp.",
     "d": "Staphylococcus aureus.",
     "correct": "A",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "Campylobacter jejuni es el patógeno más frecuentemente identificado en brotes de gastroenteritis asociados a productos cárnicos crudos o poco cocidos en Europa.",
+    "source": "EFSA y ECDC (2019) - European foodborne outbreaks reports"
   },
   {
     "question": "¿Cuál es el tiempo de congelación de productos cárnicos a -20°C para inactivar Trichinella spiralis?",
@@ -78,7 +94,9 @@
     "c": "20 días.",
     "d": "30 días.",
     "correct": "C",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "La congelación a -20°C durante 20 días inactiva Trichinella spiralis, siendo este el tratamiento recomendado para eliminar este parásito en productos cárnicos.",
+    "source": "Reglamento (CE) nº 852/2004, Anexo II, y OIE Guidelines"
   },
   {
     "question": "¿Cuál es la temperatura mínima interna de cocción para una hamburguesa de carne picada para eliminar E. coli O157:H7?",
@@ -87,6 +105,8 @@
     "c": "71°C.",
     "d": "75°C.",
     "correct": "C",
-    "category": "🍗 Higiene Alimentaria"
+    "category": "🍗 Higiene Alimentaria",
+    "explanation": "Para eliminar E. coli O157:H7 en carne picada, es necesario alcanzar una temperatura interna mínima de 71°C (160°F), superior a la requerida para otras carnes.",
+    "source": "USDA Guidelines y FDA Food Safety Modernization Act"
   }
 ]
