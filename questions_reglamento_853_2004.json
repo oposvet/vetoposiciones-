@@ -1,0 +1,112 @@
+[
+  {
+    "question": "¿Cuál es el objetivo principal del Reglamento (CE) 853/2004?",
+    "a": "Regular etiquetado de alimentos.",
+    "b": "Establecer normas de higiene específicas para productos cárnicos.",
+    "c": "Controlar pesticides en alimentos.",
+    "d": "Regular aditivos alimentarios.",
+    "correct": "B",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento (CE) 853/2004 establece las normas específicas de higiene para productos cárnicos, incluyendo requisitos de proceso, almacenamiento y trazabilidad.",
+    "source": "Reglamento (CE) nº 853/2004, Preámbulo"
+  },
+  {
+    "question": "Según el Reglamento 853/2004, ¿cuál es la temperatura máxima de almacenamiento de carne picada refrigerada?",
+    "a": "0°C a 2°C.",
+    "b": "0°C a 4°C.",
+    "c": "2°C a 6°C.",
+    "d": "4°C a 8°C.",
+    "correct": "B",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 especifica que la carne picada debe almacenarse a una temperatura máxima de 4°C para garantizar la seguridad microbiológica.",
+    "source": "Reglamento (CE) nº 853/2004, Anexo II, Capítulo II"
+  },
+  {
+    "question": "¿Qué establece el Reglamento 853/2004 respecto a la trazabilidad de productos cárnicos?",
+    "a": "No es obligatoria.",
+    "b": "Solo en cadenas de exportación.",
+    "c": "Debe permitir identificación de origen y destino del producto.",
+    "d": "Solo para productos procesados.",
+    "correct": "C",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 requiere un sistema de trazabilidad que permita identificar el origen de los animales, su proceso y destino del producto cárnico.",
+    "source": "Reglamento (CE) nº 853/2004, Artículos 17-18"
+  },
+  {
+    "question": "¿Cuáles son los requisitos mínimos de diseño de una sala de procesamiento de carnes según Reg. 853/2004?",
+    "a": "Pisos de hormigón.",
+    "b": "Pisos impermeables, lavables, con drenaje y desinfección posible.",
+    "c": "Pisos de madera tratada.",
+    "d": "No hay requisitos específicos.",
+    "correct": "B",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 establece que los pisos de salas de procesamiento deben ser impermeables, fácilmente lavables, con buen drenaje y desinfectables.",
+    "source": "Reglamento (CE) nº 853/2004, Anexo II, Capítulo I"
+  },
+  {
+    "question": "¿Qué tiempo mínimo de descanso antes del sacrificio es recomendado por el Reg. 853/2004?",
+    "a": "No hay recomendación.",
+    "b": "1 hora como mínimo.",
+    "c": "6 horas como mínimo.",
+    "d": "24 horas como mínimo.",
+    "correct": "C",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 recomienda un tiempo mínimo de descanso de 6 horas antes del sacrificio para que los animales se recuperen del estrés del transporte.",
+    "source": "Reglamento (CE) nº 853/2004, Anexo I, Capítulo III"
+  },
+  {
+    "question": "¿Qué método de refrigeración es aceptado según Reglamento 853/2004?",
+    "a": "Solo congelación.",
+    "b": "Solo refrigeración convencional.",
+    "c": "Refrigeración y congelación.",
+    "d": "Salado tradicional.",
+    "correct": "C",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 acepta tanto refrigeración (0-4°C) como congelación (-18°C) según el tiempo de almacenamiento requerido.",
+    "source": "Reglamento (CE) nº 853/2004, Anexo II"
+  },
+  {
+    "question": "¿Cuál es el requisito de personal en una instalación de procesamiento según Reg. 853/2004?",
+    "a": "No hay requisitos.",
+    "b": "Personal capacitado en higiene alimentaria.",
+    "c": "Solo supervisión externa.",
+    "d": "Personal con más de 10 años de experiencia.",
+    "correct": "B",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 requiere que el personal esté capacitado y supervisado en higiene alimentaria e implementación de sistemas APPCC.",
+    "source": "Reglamento (CE) nº 853/2004, Artículo 9"
+  },
+  {
+    "question": "¿Qué establece Reg. 853/2004 sobre eliminación de carne decomisada?",
+    "a": "Puede reutilizarse en alimentos para mascotas.",
+    "b": "Debe incinerarse o procesarse para eliminación segura.",
+    "c": "Se puede vender a precio reducido.",
+    "d": "No hay especificaciones.",
+    "correct": "B",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 establece que la carne no apta para consumo humano debe incinerarse o procesarse mediante métodos autorizados para eliminación segura.",
+    "source": "Reglamento (CE) nº 853/2004, Artículos 4-5"
+  },
+  {
+    "question": "¿Cuál es el registro obligatorio de control microbiológico según Reg. 853/2004?",
+    "a": "No es obligatorio.",
+    "b": "Solo para productos exportados.",
+    "c": "Análisis regulares con documentación de resultados.",
+    "d": "Solo con sospecha de contaminación.",
+    "correct": "C",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 obliga a realizar análisis microbiológicos regulares en productos cárnicos y mantener registro detallado de resultados.",
+    "source": "Reglamento (CE) nº 853/2004, Anexo II, Capítulo III"
+  },
+  {
+    "question": "¿Qué establece Reg. 853/2004 sobre agua utilizada en instalaciones cárnicas?",
+    "a": "Puede ser cualquier agua disponible.",
+    "b": "Debe ser agua potable o tratada específicamente.",
+    "c": "Solo agua de pozo.",
+    "d": "No hay especificaciones.",
+    "correct": "B",
+    "category": "📋 Reglamento 853/2004",
+    "explanation": "El Reglamento 853/2004 requiere que toda agua utilizada en la producción de carne sea agua potable o sometida a tratamiento específico de purificación.",
+    "source": "Reglamento (CE) nº 853/2004, Anexo I, Capítulo I"
+  }
+]
