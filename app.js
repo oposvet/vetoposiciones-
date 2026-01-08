@@ -1,151 +1,199 @@
-// ==================================================
-// ===== CONFIGURACIÓN =============================
-// ==================================================
-const MAX_QUESTIONS = 10;
+"use strict";
 
-const QUESTION_FILES = [
-  "questions_bienestar_animal.json",
-  "questions_higiene_alimentaria.json",
-  "questions_etiquetado.json",
-  "questions_sanidad_animal.json",
-];
-
-// ==================================================
-// ===== FRASES MOTIVADORAS (RESULTADO) ==============
-// ==================================================
-const motivationalPhrases = {
-  excellent: [
-    "🏆 ¡Excelente! ¡Eres un crack!",
-    "⭐ ¡Bravo! Dominas el tema perfectamente.",
-    "🎯 ¡Impresionante! Sigue así, campeón.",
-  ],
-  good: [
-    "👍 ¡Muy bien! ¡Vas por el buen camino!",
-    "💪 ¡Bien hecho! Con más práctica serás imparable.",
-    "🌟 ¡Buen trabajo! Cada vez lo haces mejor.",
-  ],
-  medium: [
-    "📚 Vamos bien. Repasa algunos temas y volverás.",
-    "💡 ¡Ánimo! La próxima lo harás mejor.",
-    "🔄 Buen esfuerzo. Practica más y mejorarás.",
-  ],
-  low: [
-    "📖 Necesitas repasar. ¡Tú puedes!",
-    "💯 Sigue practicando, ¡la mejoría está cerca!",
-    "🚀 No te desanimes, cada intento suma.",
-  ],
+const DATASETS = {
+  "questions_bienestar_animal.json": "🐄 Bienestar Animal",
+  "questions_sanidad_animal.json": "🦠 Sanidad Animal",
+  "questions_higiene_alimentaria.json": "🍗 Higiene Alimentaria",
+  "questions_etiquetado.json": "🏷️ Etiquetado",
 };
 
-// ==================================================
-// ===== VARIABLES GLOBALES ==========================
-// ==================================================
-let allQuestions = [];
-let currentTest = [];
-let userAnswers = [];
+let questions = [];
+let current = 0;
+let correctCount = 0;
+let answered = false;
 
-// ==================================================
-// ===== NOVEDADES ==================================
-// ==================================================
-const novedades = [
-  {
-    fecha: "05/01/2026",
-    titulo: "🏷️ Etiquetado ampliado",
-    descripcion:
-      "Se han añadido preguntas nuevas de etiquetado. Incluye 1169/2011, lote, alegaciones nutricionales, aditivos, IG y más.",
-  },
-  {
-    fecha: "04/01/2026",
-    titulo: "🆕 Estructura modular con 4 categorías",
-    descripcion:
-      "La app carga preguntas desde 4 categorías distintas: Bienestar Animal, Higiene Alimentaria, Etiquetado y Sanidad Animal.",
-  },
-];
+const el = (id) => document.getElementById(id);
 
-function renderNovedades() {
-  const container = document.getElementById("news-container");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  novedades.forEach((nov) => {
-    const item = document.createElement("div");
-    item.style.cssText =
-      "background:#fff; padding:15px; border-radius:8px; border-left:4px solid #667eea;";
-
-    item.innerHTML = `
-      <h3 style="margin:0 0 6px 0; color:#667eea;">${nov.titulo}</h3>
-      <p style="margin:0; color:#666; font-size:14px;">${nov.descripcion}</p>
-      <p style="margin:10px 0 0 0; color:#999; font-size:12px;">${nov.fecha}</p>
-    `;
-
-    container.appendChild(item);
-  });
+function showError(msg) {
+  const box = el("error");
+  box.textContent = msg;
+  box.style.display = "block";
 }
 
-// ==================================================
-// ===== UTIL: CATEGORÍA SELECCIONADA ================
-// ==================================================
-function getSelectedCategory() {
-  return document.getElementById("category-filter")?.value || "all";
+function clearError() {
+  const box = el("error");
+  box.textContent = "";
+  box.style.display = "none";
 }
 
-// ==================================================
-// ===== CARGA DE PREGUNTAS (Múltiples JSONs) ========
-// ==================================================
-async function loadAllQuestions() {
-  try {
-    const promises = QUESTION_FILES.map((file) =>
-      fetch(file, { cache: "no-store" })
-        .then((res) => {
-          if (!res.ok) throw new Error(`No se pudo cargar ${file}`);
-          return res.json();
-        })
-        .catch((err) => {
-          console.error(`Error cargando ${file}:`, err);
-          return [];
-        })
-    );
-
-    const results = await Promise.all(promises);
-    const allData = results.flat();
-
-    // Validar/normalizar
-    allQuestions = allData
-      .filter((q) => {
-        return (
-          q &&
-          typeof q.question === "string" &&
-          typeof q.a === "string" &&
-          typeof q.b === "string" &&
-          typeof q.c === "string" &&
-          typeof q.d === "string" &&
-          ["A", "B", "C", "D"].includes(String(q.correct).toUpperCase()) &&
-          typeof q.category === "string"
-        );
-      })
-      .map((q) => ({ ...q, correct: String(q.correct).toUpperCase() }));
-
-    updateCategoryFilter();
-    renderQuestionStats();
-    updateStatsForSelectedCategory();
-
-    if (allQuestions.length === 0) {
-      setError(
-        "No se han podido cargar preguntas. Verifica que los archivos JSON existan en la misma carpeta que index.html."
-      );
-    }
-  } catch (error) {
-    console.error("Error general al cargar preguntas:", error);
-    setError("Error al cargar el banco de preguntas. Verifica los archivos JSON.");
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
+  return a;
 }
 
-// ==================================================
-// ===== FILTRO DE CATEGORÍAS =======================
-// ==================================================
-function updateCategoryFilter() {
-  const categoryFilter = document.getElementById("category-filter");
-  if (!categoryFilter) return;
+async function loadQuestions(jsonFile) {
+  // Importante: URL relativa robusta para GitHub Pages / subcarpetas
+  const url = new URL(jsonFile, document.baseURI);
 
-  // Mantener opción "all"
-  categoryFilter.innerHTML = `<option value="all">📚 Todas las catego
+  const res = await fetch(url.toString(), { cache: "no-store" });
+  if (!res.ok) throw new Error(`No se pudo cargar ${jsonFile} (HTTP ${res.status}).`);
+
+  const data = await res.json();
+  if (!Array.isArray(data)) throw new Error(`Formato inválido en ${jsonFile}: se esperaba un array.`);
+  return data;
+}
+
+function resetQuiz() {
+  current = 0;
+  correctCount = 0;
+  answered = false;
+
+  el("feedback").textContent = "";
+  el("nextBtn").disabled = true;
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  if (!q) return;
+
+  el("qTitle").style.display = "";
+  el("quizForm").style.display = "";
+  el("qTitle").textContent = `(${current + 1}/${questions.length}) ${q.question}`;
+
+  const options = el("options");
+  options.innerHTML = "";
+
+  const entries = [
+    ["A", q.a],
+    ["B", q.b],
+    ["C", q.c],
+    ["D", q.d],
+  ];
+
+  for (const [key, text] of entries) {
+    const id = `opt_${key}`;
+
+    const label = document.createElement("label");
+    label.htmlFor = id;
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "answer";
+    input.value = key;
+    input.id = id;
+
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(` ${key}) ${text}`));
+
+    options.appendChild(label);
+  }
+
+  el("feedback").textContent = "";
+  el("nextBtn").disabled = true;
+  answered = false;
+
+  el("status").textContent = `Aciertos: ${correctCount} · Fallos: ${current - correctCount}`;
+}
+
+function getSelectedAnswer() {
+  const checked = document.querySelector('input[name="answer"]:checked');
+  return checked ? checked.value : null;
+}
+
+function finish() {
+  const score10 = Math.round((correctCount / questions.length) * 10 * 100) / 100;
+  el("status").textContent = `Test finalizado · Aciertos: ${correctCount}/${questions.length} · Nota: ${score10}/10`;
+  el("qTitle").style.display = "none";
+  el("quizForm").style.display = "none";
+}
+
+async function startCategory(jsonFile) {
+  clearError();
+  el("status").textContent = `Cargando: ${DATASETS[jsonFile] ?? jsonFile}...`;
+
+  const data = await loadQuestions(jsonFile);
+
+  // Opcional: barajar preguntas
+  questions = shuffle(data);
+
+  // Validación mínima de campos esperados
+  const bad = questions.find(
+    (q) => !q || !q.question || !q.a || !q.b || !q.c || !q.d || !q.correct
+  );
+  if (bad) throw new Error("Alguna pregunta no tiene el formato esperado (question, a, b, c, d, correct).");
+
+  resetQuiz();
+  renderQuestion();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Botones de categorías
+  el("categoryButtons").addEventListener("click", async (ev) => {
+    const btn = ev.target.closest("button[data-file]");
+    if (!btn) return;
+
+    try {
+      await startCategory(btn.dataset.file);
+    } catch (e) {
+      showError(e.message || String(e));
+      el("status").textContent = "Error al cargar la categoría.";
+      el("qTitle").style.display = "none";
+      el("quizForm").style.display = "none";
+    }
+  });
+
+  // Responder
+  el("quizForm").addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    if (!questions.length) return;
+    if (answered) return;
+
+    const q = questions[current];
+    const selected = getSelectedAnswer();
+    if (!selected) {
+      el("feedback").textContent = "Selecciona una opción.";
+      return;
+    }
+
+    answered = true;
+
+    const ok = String(selected).toUpperCase() === String(q.correct).toUpperCase();
+    if (ok) correctCount++;
+
+    el("feedback").textContent = ok
+      ? "Correcto."
+      : `Incorrecto. La respuesta correcta era ${q.correct}.`;
+
+    el("nextBtn").disabled = false;
+    el("status").textContent = `Aciertos: ${correctCount} · Fallos: ${current + 1 - correctCount}`;
+  });
+
+  // Siguiente
+  el("nextBtn").addEventListener("click", () => {
+    if (!questions.length) return;
+
+    current++;
+    if (current >= questions.length) {
+      finish();
+      return;
+    }
+    renderQuestion();
+  });
+
+  // Reiniciar
+  el("restartBtn").addEventListener("click", () => {
+    clearError();
+    questions = [];
+    current = 0;
+    correctCount = 0;
+    answered = false;
+
+    el("status").textContent = "Elige una categoría para empezar.";
+    el("qTitle").style.display = "none";
+    el("quizForm").style.display = "none";
+  });
+});
