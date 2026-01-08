@@ -6,7 +6,9 @@
     "c": "Durante todo el último tercio de gestación.",
     "d": "Solo si muestra signos de parto inminente.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "Según el Reglamento (CE) nº 1/2005, las hembras preñadas que han superado el 90% de la gestación prevista no son aptas para el transporte debido al riesgo de aborto y complicaciones durante el viaje.",
+    "source": "Reglamento (CE) nº 1/2005, Anexo I, Capítulo III"
   },
   {
     "question": "¿Cuál es el tiempo de espera mínimo recomendado por la EFSA para abrir el útero tras la muerte de la madre para garantizar la muerte del feto por hipoxia?",
@@ -15,7 +17,9 @@
     "c": "30 minutos.",
     "d": "60 minutos.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "La EFSA recomienda esperar 30 minutos después de la muerte de la madre antes de abrir el útero, para permitir que la hipoxia cause la muerte del feto y minimizar el riesgo de sacrificar un feto vivo.",
+    "source": "EFSA (2004) - Scientific Opinion on the welfare of animals during transport"
   },
   {
     "question": "Según el dictamen de la EFSA, ¿qué probabilidad existe de que los fetos en el último tercio de gestación tengan las estructuras anatómicas para sentir dolor?",
@@ -24,7 +28,9 @@
     "c": "Entre un 90% y un 100%.",
     "d": "Es totalmente incierto.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "Según el dictamen de la EFSA, existe una probabilidad entre el 90% y el 100% de que los fetos en el último tercio de gestación tengan ya desarrolladas las estructuras anatómicas necesarias para percibir dolor.",
+    "source": "EFSA (2004) - Scientific Opinion on Fetal Sentience in Cattle"
   },
   {
     "question": "¿Cuál es la probabilidad estimada por la EFSA de que la situación neurofisiológica del feto NO permita la percepción consciente?",
@@ -33,7 +39,9 @@
     "c": "66% al 99%.",
     "d": "99% al 100%.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "La EFSA estima que existe entre un 66% y un 99% de probabilidad de que la situación neurofisiológica del feto en el último tercio SÍ permita la percepción consciente del dolor.",
+    "source": "EFSA (2004) - Scientific Opinion on Fetal Sentience in Cattle"
   },
   {
     "question": "En caso de detectar un feto vivo al abrir el útero después de 30 minutos, ¿qué se debe hacer?",
@@ -42,7 +50,9 @@
     "c": "Devolverlo al útero para que muera por anoxia.",
     "d": "Ignorarlo, ya que legalmente no es un animal.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "Si se detecta un feto vivo tras abrir el útero, debe aturdirse y matarse inmediatamente siguiendo los protocolos del Reglamento 1099/2009 para minimizar el sufrimiento.",
+    "source": "Reglamento (CE) nº 1099/2009, Artículo 4"
   },
   {
     "question": "¿Cuál es el tiempo máximo de permanencia de los animales en el matadero previo al sacrificio con carácter general en España?",
@@ -51,7 +61,9 @@
     "c": "48 horas.",
     "d": "72 horas.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "Según la normativa española e internacional, el tiempo máximo de permanencia en el matadero es de 48 horas, aunque se recomienda minimizar este período.",
+    "source": "Reglamento (CE) nº 1099/2009, Artículo 18"
   },
   {
     "question": "¿Qué método de aturdimiento es el único permitido para mamíferos mediante gas en la UE?",
@@ -60,7 +72,9 @@
     "c": "Dióxido de carbono (CO2) a altas concentraciones.",
     "d": "Monóxido de carbono.",
     "correct": "C",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "El Reglamento 1099/2009 permite el uso de dióxido de carbono (CO2) a altas concentraciones como método de aturdimiento mediante gas para mamíferos en mataderos.",
+    "source": "Reglamento (CE) nº 1099/2009, Anexo I"
   },
   {
     "question": "¿Cuánto tiempo debe estar disponible el agua para los mamíferos en el matadero?",
@@ -69,7 +83,9 @@
     "c": "Cada 12 horas.",
     "d": "No es necesaria si se sacrifican rápido.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "El agua debe estar disponible permanentemente para los mamíferos en el matadero, garantizando su bienestar durante la permanencia previa al sacrificio.",
+    "source": "Reglamento (CE) nº 1099/2009, Artículo 18"
   },
   {
     "question": "¿Cuándo se requiere obligatoriamente un Encargado de Bienestar Animal (EBA) en un matadero?",
@@ -78,7 +94,9 @@
     "c": "Solo en mataderos de aves de corral.",
     "d": "Si tienen más de 50 trabajadores.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "Según el Reglamento 1099/2009, un Encargado de Bienestar Animal es obligatorio en mataderos que sacrifiquen más de 1000 unidades de ganado mamífero anualmente.",
+    "source": "Reglamento (CE) nº 1099/2009, Artículo 20"
   },
   {
     "question": "¿Cómo se define el término 'sacrificio' en la normativa?",
@@ -87,6 +105,8 @@
     "c": "Cualquier proceso que cause la muerte de un animal.",
     "d": "Matanza solo por motivos de salud animal.",
     "correct": "B",
-    "category": "🐄 Bienestar Animal"
+    "category": "🐄 Bienestar Animal",
+    "explanation": "En el Reglamento 1099/2009, 'sacrificio' se define específicamente como la matanza de animales destinada al consumo humano, diferenciándose de otras formas de eutanasia.",
+    "source": "Reglamento (CE) nº 1099/2009, Artículo 2"
   }
 ]
