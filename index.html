@@ -1,51 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VetOposiciones</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
-    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-    button { padding: 10px 12px; cursor: pointer; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; max-width: 820px; }
-    .muted { color: #666; }
-    .error { color: #b00020; }
-    fieldset { border: 0; padding: 0; margin: 0; }
-    label { display: block; padding: 8px 0; }
-    .actions { display: flex; gap: 8px; margin-top: 12px; }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="App gratuita para practicar oposiciones de veterinaria. Test por categorías basados en normativa vigente." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VetOposiciones · Test Veterinaria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <h1>VetOposiciones</h1>
+  <body>
+    <header>
+      <h1>🩺 VetOposiciones</h1>
+      <p>Preparación de oposiciones de veterinaria</p>
+    </header>
 
-  <div class="row" id="categoryButtons">
-    <button data-file="questions_bienestar_animal.json">🐄 Bienestar animal</button>
-    <button data-file="questions_sanidad_animal.json">🦠 Sanidad animal</button>
-    <button data-file="questions_higiene_alimentaria.json">🍗 Higiene alimentaria</button>
-    <button data-file="questions_etiquetado.json">🏷️ Etiquetado</button>
-  </div>
+    <main>
+      <section id="landing">
+        <h1>Test Veterinaria – Oposiciones</h1>
+        <p>Salud pública · Sanidad animal · Bienestar · Etiquetado</p>
+        <button onclick="document.getElementById('test-section').scrollIntoView({behavior:'smooth'})">
+          Empezar a practicar
+        </button>
+      </section>
 
-  <div class="card">
-    <div id="status" class="muted">Elige una categoría para empezar.</div>
-    <div id="error" class="error" style="display:none;"></div>
+      <section>
+        <h2>🆕 Novedades</h2>
+        <div id="news-container"></div>
+      </section>
 
-    <h2 id="qTitle" style="display:none;"></h2>
+      <section id="test-section">
+        <h2>📝 Test</h2>
 
-    <form id="quizForm" style="display:none;">
-      <fieldset id="options"></fieldset>
+        <label for="category-filter">Categoría</label>
+        <select id="category-filter"></select>
 
-      <div class="actions">
-        <button type="submit" id="answerBtn">Responder</button>
-        <button type="button" id="nextBtn" disabled>Siguiente</button>
-        <button type="button" id="restartBtn" style="margin-left:auto;">Reiniciar</button>
-      </div>
+        <div id="question-stats">
+          <div id="stats-top"></div>
+          <div id="questions-by-category"></div>
+        </div>
 
-      <div id="feedback" class="muted" style="margin-top:10px;"></div>
-    </form>
-  </div>
+        <button id="startBtn">▶ Iniciar test</button>
 
-  <script src="./app.js" defer></script>
-</body>
+        <div id="test"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
