@@ -8,6 +8,7 @@ const QUESTION_FILES = [
   "questions_higiene_alimentaria.json",
   "questions_etiquetado.json",
   "questions_sanidad_animal.json",
+  "questions_reglamento_853_2004.json",
 ];
 
 // ================================================== 
@@ -51,14 +52,19 @@ let lastTotalQuestions = 0;
 // ==================================================
 const novedades = [
   {
-    fecha: "05/01/2026",
-    titulo: "🏷️ Etiquetado ampliado",
-    descripcion: "Se han añadido preguntas nuevas de etiquetado. Incluye 1169/2011, lote, alegaciones nutricionales, aditivos, IG y más.",
+    fecha: "08/01/2026",
+    titulo: "🆕 Reglamento (CE) 853/2004",
+    descripcion: "Se ha añadido una nueva categoría con 10 preguntas sobre higiene de los productos cárnicos y Reglamento 853/2004.",
   },
   {
-    fecha: "04/01/2026",
-    titulo: "🆕 Estructura modular con 4 categorías",
-    descripcion: "La app carga preguntas desde 4 categorías distintas: Bienestar Animal, Higiene Alimentaria, Etiquetado y Sanidad Animal.",
+    fecha: "05/01/2026",
+    titulo: "💡 Explicaciones y fuentes",
+    descripcion: "Cada pregunta ahora muestra la explicación y la fuente normativa al corregir el test.",
+  },
+  {
+    fecha: "05/01/2026",
+    titulo: "🎨 Colores mejorados",
+    descripcion: "Fondo rojo para respuestas incorrectas y verde para correctas. Mejor visualización de errores.",
   },
 ];
 
@@ -147,7 +153,12 @@ async function loadAllQuestions() {
           typeof q.category === "string"
         );
       })
-      .map((q) => ({ ...q, correct: String(q.correct).toUpperCase() }));
+      .map((q) => ({ 
+        ...q, 
+        correct: String(q.correct).toUpperCase(),
+        explanation: q.explanation || "Sin explicación disponible",
+        source: q.source || "Fuente no especificada"
+      }));
 
     updateCategoryFilter();
     renderQuestionStats();
@@ -306,19 +317,20 @@ function startTest() {
   testDiv.innerHTML = currentTest
     .map(
       (q, i) => `
-      <div class="question-block">
+      <div class="question-block" id="qblock-${i}">
         <div style="font-size:12px; color:#666; margin-bottom:8px;">${q.category}</div>
         <div style="font-weight:bold; margin-bottom:10px;">${i + 1}. ${q.question}</div>
         ${q.options
           .map(
             (opt) => `
-            <label>
+            <label id="label-${i}-${opt.key}">
               <input type="radio" name="q${i}" value="${opt.key}" onchange="saveAnswer(${i}, '${opt.key}')" />
               ${opt.key}) ${opt.text}
             </label>
           `
           )
           .join("")}
+        <div id="explanation-${i}" style="margin-top:12px; padding:10px; background:#f0f7ff; border-left:3px solid #667eea; border-radius:5px; display:none; font-size:13px; color:#333;"></div>
       </div>
     `
     )
@@ -342,20 +354,35 @@ function correctTest() {
   currentTest.forEach((q, i) => {
     const selected = userAnswers[i];
     const radios = document.getElementsByName(`q${i}`);
+    const explanationDiv = document.getElementById(`explanation-${i}`);
 
     radios.forEach((r) => {
-      const label = r.parentElement;
+      const labelId = `label-${i}-${r.value}`;
+      const label = document.getElementById(labelId);
       if (!label) return;
 
       label.classList.remove("correct", "incorrect");
 
       if (r.value === q.correct) {
         label.classList.add("correct");
+        label.style.background = "#d4edda";
+        label.style.borderLeft = "4px solid #28a745";
       }
       if (selected && r.value === selected && selected !== q.correct) {
         label.classList.add("incorrect");
+        label.style.background = "#f8d7da";
+        label.style.borderLeft = "4px solid #dc3545";
       }
     });
+
+    // Mostrar explicación y fuente
+    if (explanationDiv) {
+      explanationDiv.style.display = "block";
+      explanationDiv.innerHTML = `
+        <b>💡 Explicación:</b> ${q.explanation}<br><br>
+        <b>📖 Fuente:</b> ${q.source}
+      `;
+    }
 
     if (selected === q.correct) correctCount++;
   });
@@ -375,10 +402,10 @@ function correctTest() {
   const phrase = phraseList[Math.floor(Math.random() * phraseList.length)];
 
   resultDiv.innerHTML = `
-    <div style="padding:15px; background:#f8f9fa; border-radius:8px; border:1px solid #eee;">
-      <div>✅ Nota: ${score.toFixed(2)} / 10</div>
-      <div>📌 Aciertos: ${correctCount}/${totalQuestions}</div>
-      <div style="margin-top:10px;">${phrase}</div>
+    <div style="padding:15px; background:#f8f9fa; border-radius:8px; border:1px solid #eee; margin-top:20px;">
+      <div style="font-size:18px; margin-bottom:10px;">✅ Nota: ${score.toFixed(2)} / 10</div>
+      <div style="font-size:16px; margin-bottom:10px;">📌 Aciertos: ${correctCount}/${totalQuestions}</div>
+      <div style="margin-top:10px; font-size:16px;">${phrase}</div>
       <button id="shareBtn" onclick="shareResult()" style="background: #667eea; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; font-weight: bold; margin-top: 15px;">📤 Compartir resultado</button>
     </div>
   `;
