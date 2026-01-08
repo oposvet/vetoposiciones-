@@ -3,7 +3,6 @@
 // ==================================================
 const MAX_QUESTIONS = 10;
 
-// Lista de archivos JSON a cargar
 const QUESTION_FILES = [
   "questions_bienestar_animal.json",
   "questions_higiene_alimentaria.json",
@@ -12,7 +11,7 @@ const QUESTION_FILES = [
 ];
 
 // ==================================================
-// ===== FRASES MOTIVADORAS =========================
+// ===== FRASES MOTIVADORAS (RESULTADO) ==============
 // ==================================================
 const motivationalPhrases = {
   excellent: [
@@ -43,66 +42,61 @@ const motivationalPhrases = {
 let allQuestions = [];
 let currentTest = [];
 let userAnswers = [];
+let lastScore = 0;
+let lastCorrectCount = 0;
+let lastTotalQuestions = 0;
 
 // ==================================================
-// ===== NOVEDADES ===================================
+// ===== NOVEDADES ==================================
 // ==================================================
 const novedades = [
+  {
+    fecha: "05/01/2026",
+    titulo: "🏷️ Etiquetado ampliado",
+    descripcion:
+      "Se han añadido preguntas nuevas de etiquetado. Incluye 1169/2011, lote, alegaciones nutricionales, aditivos, IG y más.",
+  },
   {
     fecha: "04/01/2026",
     titulo: "🆕 Estructura modular con 4 categorías",
     descripcion:
-      "La app ahora carga preguntas desde 4 archivos JSON separados. Más mantenible, escalable y fácil de actualizar.",
-  },
-  {
-    fecha: "04/01/2026",
-    titulo: "🐄 Bienestar Animal (questions_bienestar_animal.json)",
-    descripcion:
-      "10 preguntas sobre transporte de animales, sacrificio humanitario y videovigilancia en mataderos.",
-  },
-  {
-    fecha: "04/01/2026",
-    titulo: "🍗 Higiene Alimentaria (questions_higiene_alimentaria.json)",
-    descripcion:
-      "10 preguntas sobre temperaturas, APPCC, patógenos y límites microbiológicos.",
-  },
-  {
-    fecha: "04/01/2026",
-    titulo: "🏷️ Etiquetado (questions_etiquetado.json)",
-    descripcion:
-      "10 preguntas sobre Reglamento (UE) 1169/2011, alérgenos, códigos E y marcado de establecimiento.",
-  },
-  {
-    fecha: "04/01/2026",
-    titulo: "🦠 Sanidad Animal (questions_sanidad_animal.json)",
-    descripcion:
-      "10 preguntas sobre enfermedades virales, bacterianas, zoonosis y vectores en ganado.",
+      "La app carga preguntas desde 4 categorías distintas: Bienestar Animal, Higiene Alimentaria, Etiquetado y Sanidad Animal.",
   },
 ];
 
 function renderNovedades() {
   const container = document.getElementById("news-container");
   if (!container) return;
+
   container.innerHTML = "";
+
   novedades.forEach((nov) => {
-    const div = document.createElement("div");
-    div.style.cssText =
-      "background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;";
-    div.innerHTML = `
-      <h3 style="margin: 0 0 5px 0; color: #667eea;">${nov.titulo}</h3>
-      <p style="margin: 0; color: #666; font-size: 14px;">${nov.descripcion}</p>
-      <p style="margin: 10px 0 0 0; color: #999; font-size: 12px;">${nov.fecha}</p>
+    const item = document.createElement("div");
+    item.style.cssText =
+      "background:#fff; padding:15px; border-radius:8px; border-left:4px solid #667eea;";
+
+    item.innerHTML = `
+      <h3 style="margin:0 0 6px 0; color:#667eea;">${nov.titulo}</h3>
+      <p style="margin:0; color:#666; font-size:14px;">${nov.descripcion}</p>
+      <p style="margin:10px 0 0 0; color:#999; font-size:12px;">${nov.fecha}</p>
     `;
-    container.appendChild(div);
+
+    container.appendChild(item);
   });
 }
 
 // ==================================================
-// ===== CARGA DE PREGUNTAS (Múltiples JSONs) =====
+// ===== UTIL: CATEGORÍA SELECCIONADA ================
+// ==================================================
+function getSelectedCategory() {
+  return document.getElementById("category-filter")?.value || "all";
+}
+
+// ==================================================
+// ===== CARGA DE PREGUNTAS (Múltiples JSONs) ========
 // ==================================================
 async function loadAllQuestions() {
   try {
-    // Cargar todos los archivos en paralelo
     const promises = QUESTION_FILES.map((file) =>
       fetch(file, { cache: "no-store" })
         .then((res) => {
@@ -116,11 +110,9 @@ async function loadAllQuestions() {
     );
 
     const results = await Promise.all(promises);
-
-    // Combinar todos los resultados
     const allData = results.flat();
 
-    // Validar y filtrar
+    // Validar/normalizar
     allQuestions = allData
       .filter((q) => {
         return (
@@ -134,23 +126,16 @@ async function loadAllQuestions() {
           typeof q.category === "string"
         );
       })
-      .map((q) => ({
-        ...q,
-        correct: String(q.correct).toUpperCase(),
-      }));
-
-    console.log(
-      `✅ Cargadas ${allQuestions.length} preguntas de ${QUESTION_FILES.length} archivos`
-    );
+      .map((q) => ({ ...q, correct: String(q.correct).toUpperCase() }));
 
     updateCategoryFilter();
+    renderQuestionStats();
+    updateStatsForSelectedCategory();
 
     if (allQuestions.length === 0) {
-      const testDiv = document.getElementById("test");
-      if (testDiv) {
-        testDiv.innerHTML =
-          "<p style='color: red;'>No se han podido cargar preguntas. Verifica que los archivos JSON existan.</p>";
-      }
+      setError(
+        "No se han podido cargar preguntas. Verifica que los archivos JSON existan en la misma carpeta que index.html."
+      );
     }
   } catch (error) {
     console.error("Error general al cargar preguntas:", error);
@@ -165,7 +150,9 @@ function updateCategoryFilter() {
   const categoryFilter = document.getElementById("category-filter");
   if (!categoryFilter) return;
 
+  // Mantener opción "all"
   categoryFilter.innerHTML = `<option value="all">📚 Todas las categorías</option>`;
+
   const categories = [...new Set(allQuestions.map((q) => q.category))].sort();
   categories.forEach((cat) => {
     const option = document.createElement("option");
@@ -173,6 +160,61 @@ function updateCategoryFilter() {
     option.textContent = cat;
     categoryFilter.appendChild(option);
   });
+}
+
+// ==================================================
+// ===== ESTADÍSTICAS BANCO ==========================
+// ==================================================
+function getCountsByCategory() {
+  return allQuestions.reduce((acc, q) => {
+    acc[q.category] = (acc[q.category] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+function getAvailableInSelectedCategory() {
+  const selected = getSelectedCategory();
+  if (selected === "all") return allQuestions.length;
+  return allQuestions.filter((q) => q.category === selected).length;
+}
+
+function renderQuestionStats() {
+  const statsTop = document.getElementById("stats-top");
+  const byCatEl = document.getElementById("questions-by-category");
+  if (!statsTop || !byCatEl) return;
+
+  const total = allQuestions.length;
+  const counts = getCountsByCategory();
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+  statsTop.innerHTML = `
+    <div>• Total de preguntas: <b>${total}</b></div>
+    <div>• Preguntas por test: <b>${MAX_QUESTIONS}</b></div>
+    <div id="available-selected" style="margin-top:6px;"></div>
+  `;
+
+  byCatEl.innerHTML = sorted
+    .map(([cat, n]) => `<div>• ${cat}: ${n}</div>`)
+    .join("");
+}
+
+function updateStatsForSelectedCategory() {
+  const availableEl = document.getElementById("available-selected");
+  if (!availableEl) return;
+
+  const selected = getSelectedCategory();
+  const available = getAvailableInSelectedCategory();
+
+  const label =
+    selected === "all" ? "Disponibles (todas)" : `Disponibles en ${selected}`;
+
+  availableEl.innerHTML = `• ${label}: <b>${available}</b>`;
+
+  const startBtn = document.getElementById("startBtn");
+  if (startBtn) {
+    const willUse = Math.min(MAX_QUESTIONS, available);
+    startBtn.textContent = `▶ Iniciar test (${willUse} de ${available})`;
+  }
 }
 
 // ==================================================
@@ -187,15 +229,50 @@ function shuffleQuestionOptions(question) {
     key,
     text: question[key.toLowerCase()],
   }));
+
   shuffleArray(options);
   return { ...question, options };
 }
 
 function setError(message) {
   const testDiv = document.getElementById("test");
-  if (testDiv) {
-    testDiv.innerHTML = `<p style="color: red; font-weight: bold;">${message}</p>`;
-  }
+  if (testDiv) testDiv.innerHTML = `<p style="color:red;">${message}</p>`;
+}
+
+// ==================================================
+// ===== FUNCIÓN COMPARTIR ===========================
+// ==================================================
+function shareResult() {
+  const score = lastScore.toFixed(2);
+  const correctCount = lastCorrectCount;
+  const totalQuestions = lastTotalQuestions;
+  const category = getSelectedCategory();
+
+  const categoryText = category === "all" ? "todas las categorías" : category;
+
+  const shareText = `📊 He conseguido ${score}/10 en VetOposiciones\n\n✅ Aciertos: ${correctCount}/${totalQuestions}\n📚 Categoría: ${categoryText}\n\n¿Te atreves a competir? 🩺`;
+
+  // Copiar al portapapeles
+  navigator.clipboard.writeText(shareText).then(
+    () => {
+      // Mostrar confirmación
+      const shareBtn = document.getElementById("shareBtn");
+      if (shareBtn) {
+        const originalText = shareBtn.textContent;
+        shareBtn.textContent = "✅ ¡Copiado!";
+        shareBtn.style.background = "#28a745";
+
+        setTimeout(() => {
+          shareBtn.textContent = originalText;
+          shareBtn.style.background = "#667eea";
+        }, 2000);
+      }
+    },
+    (err) => {
+      console.error("Error al copiar:", err);
+      alert("No se pudo copiar al portapapeles. Intenta nuevamente.");
+    }
+  );
 }
 
 // ==================================================
@@ -216,161 +293,56 @@ function startTest() {
   resultDiv.textContent = "";
   userAnswers = [];
 
-  const category = document.getElementById("category-filter")?.value || "all";
+  const category = getSelectedCategory();
   let filtered = allQuestions.filter(
     (q) => category === "all" || q.category === category
   );
 
   if (filtered.length === 0) {
-    testDiv.innerHTML =
-      "<p style='color: orange;'>No hay preguntas disponibles para esta categoría.</p>";
+    testDiv.innerHTML = "<p>No hay preguntas disponibles para esta categoría.</p>";
     if (correctBtn) correctBtn.style.display = "none";
     return;
   }
 
-  filtered = shuffleArray(filtered).slice(
-    0,
-    Math.min(MAX_QUESTIONS, filtered.length)
-  );
+  filtered = shuffleArray(filtered).slice(0, Math.min(MAX_QUESTIONS, filtered.length));
   currentTest = filtered.map((q) => shuffleQuestionOptions(q));
 
   testDiv.innerHTML = currentTest
     .map(
       (q, i) => `
-    <div class="question-block" id="question-${i}">
-      <p style="font-size: 12px; color: #999; margin-bottom: 5px;">${q.category}</p>
-      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 16px;">
-        <strong>${i + 1}. ${q.question}</strong>
-      </h3>
-      <div>
+      <div class="question-block">
+        <div style="font-size:12px; color:#666; margin-bottom:8px;">${q.category}</div>
+        <div style="font-weight:bold; margin-bottom:10px;">${i + 1}. ${q.question}</div>
         ${q.options
           .map(
             (opt) => `
-          <label style="display: block; padding: 10px; margin: 8px 0; border-radius: 5px; cursor: pointer; background: #f8f9fa; transition: all 0.2s;">
-            <input 
-              type="radio" 
-              name="question-${i}" 
-              value="${opt.key}"
-              onchange="userAnswers[${i}] = this.value"
-              style="cursor: pointer; margin-right: 10px;"
-            />
-            ${opt.key}. ${opt.text}
-          </label>
-        `
+            <label>
+              <input type="radio" name="q${i}" value="${opt.key}"
+                onchange="saveAnswer(${i}, '${opt.key}')" />
+              ${opt.key}) ${opt.text}
+            </label>
+          `
           )
           .join("")}
       </div>
-    </div>
-  `
+    `
     )
     .join("");
 
   if (correctBtn) correctBtn.style.display = "inline-block";
 }
 
-// ==================================================
-// ===== CORRECCIÓN ==================================
-// ==================================================
+function saveAnswer(index, value) {
+  userAnswers[index] = value;
+}
+
 function correctTest() {
   const resultDiv = document.getElementById("result");
+  const correctBtn = document.getElementById("correctBtn");
+
   if (!resultDiv) return;
 
   let correctCount = 0;
 
-  // Colorea cada pregunta
   currentTest.forEach((q, i) => {
-    const userAnswer = userAnswers[i];
-    const questionBlock = document.getElementById(`question-${i}`);
-    const isCorrect = userAnswer === q.correct;
-
-    if (isCorrect) {
-      correctCount++;
-    }
-
-    if (questionBlock) {
-      // Color de fondo según acierto/error
-      if (isCorrect) {
-        questionBlock.style.cssText =
-          "background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; border-radius: 5px; opacity: 0.8;";
-      } else {
-        questionBlock.style.cssText =
-          "background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 5px; opacity: 0.8;";
-      }
-
-      // Colorea los labels (opciones)
-      const labels = questionBlock.querySelectorAll("label");
-      labels.forEach((label) => {
-        const radio = label.querySelector("input[type='radio']");
-        if (!radio) return;
-
-        const optionKey = radio.value;
-
-        if (optionKey === q.correct) {
-          // Opción correcta en verde
-          label.style.background = "#c3e6cb";
-          label.style.borderLeft = "3px solid #28a745";
-          label.style.fontWeight = "bold";
-        } else if (optionKey === userAnswer && userAnswer !== q.correct) {
-          // Opción seleccionada incorrecta en rojo
-          label.style.background = "#f5c6cb";
-          label.style.borderLeft = "3px solid #dc3545";
-          label.style.fontWeight = "bold";
-        }
-      });
-    }
-  });
-
-  // Calcula nota
-  const totalQuestions = currentTest.length;
-  const score = ((correctCount / totalQuestions) * 10).toFixed(2);
-
-  // Selecciona frase motivadora según nota
-  let phraseCategory;
-  if (score >= 9) phraseCategory = "excellent";
-  else if (score >= 7) phraseCategory = "good";
-  else if (score >= 5) phraseCategory = "medium";
-  else phraseCategory = "low";
-
-  const phrase =
-    motivationalPhrases[phraseCategory][
-      Math.floor(Math.random() * motivationalPhrases[phraseCategory].length)
-    ];
-
-  // Muestra resultado
-  resultDiv.innerHTML = `
-    <div style="
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      margin-top: 30px;
-    ">
-      <h2 style="margin: 0 0 10px 0; font-size: 24px;">Tu Resultado</h2>
-      <div style="
-        background: rgba(255,255,255,0.2);
-        padding: 20px;
-        border-radius: 8px;
-        margin: 20px 0;
-      ">
-        <p style="font-size: 48px; margin: 0; font-weight: bold;">${score} / 10</p>
-        <p style="font-size: 18px; margin: 10px 0 0 0;">Acertos: ${correctCount}/${totalQuestions}</p>
-      </div>
-      <p style="font-size: 20px; margin: 20px 0 0 0; font-weight: bold;">
-        ${phrase}
-      </p>
-    </div>
-  `;
-
-  // Oculta botón de corregir
-  const correctBtn = document.getElementById("correctBtn");
-  if (correctBtn) correctBtn.style.display = "none";
-}
-
-// ==================================================
-// ===== INICIALIZACIÓN ==============================
-// ==================================================
-document.addEventListener("DOMContentLoaded", () => {
-  renderNovedades();
-  loadAllQuestions(); // Cambio: ahora se llama loadAllQuestions()
-});
+    c
