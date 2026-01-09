@@ -218,5 +218,115 @@
   "category": "🦠 Sanidad Animal",
   "explanation": "El artículo 10 prohíbe la introducción de material infeccioso salvo en los supuestos expresamente autorizados por la autoridad competente.",
   "source": "Ley 8/2003, de sanidad animal, artículo 10"
+},
+{
+  "question": "Según el artículo 11 de la Ley 8/2003, NO se considerará autoridad competente en materia de sanidad animal:",
+  "a": "La Administración General del Estado en el ámbito de sus competencias",
+  "b": "Los órganos competentes de las comunidades autónomas",
+  "c": "Las entidades locales cuando actúen por delegación",
+  "d": "Las organizaciones profesionales agrarias con representación sectorial",
+  "correct": "D",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 11 define como autoridades competentes exclusivamente a las administraciones públicas con competencias reconocidas, sin incluir a organizaciones profesionales agrarias.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 11"
+},
+{
+  "question": "Conforme al artículo 12 de la Ley 8/2003, las actuaciones de las autoridades competentes NO deberán:",
+  "a": "Basarse en criterios técnicos y científicos",
+  "b": "Coordinarse entre administraciones",
+  "c": "Garantizar la protección de la sanidad animal y la salud pública",
+  "d": "Responder a intereses económicos sectoriales ajenos al riesgo sanitario",
+  "correct": "D",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 12 establece que las actuaciones deben regirse por criterios técnicos, científicos y de coordinación administrativa, no por intereses económicos ajenos al riesgo sanitario.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 12"
+},
+{
+  "question": "De acuerdo con el artículo 13 de la Ley 8/2003, NO corresponde a la Administración General del Estado:",
+  "a": "La coordinación general en materia de sanidad animal",
+  "b": "La representación internacional del Estado en sanidad animal",
+  "c": "La ejecución directa de todas las actuaciones sanitarias en explotaciones",
+  "d": "La adopción de medidas en sanidad exterior",
+  "correct": "C",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 13 atribuye funciones de coordinación y sanidad exterior al Estado, pero no la ejecución directa de todas las actuaciones en explotaciones, que corresponde a las comunidades autónomas.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 13"
+},
+{
+  "question": "Según el artículo 14 de la Ley 8/2003, las comunidades autónomas NO ejercerán:",
+  "a": "La ejecución de la normativa de sanidad animal",
+  "b": "El control sanitario de explotaciones y animales",
+  "c": "La coordinación internacional en sanidad animal",
+  "d": "La adopción de medidas sanitarias en su ámbito territorial",
+  "correct": "C",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 14 atribuye a las comunidades autónomas funciones de ejecución y control en su territorio, excluyendo la coordinación internacional, que corresponde al Estado.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 14"
+},
+{
+  "question": "Conforme al artículo 15 de la Ley 8/2003, los veterinarios oficiales NO tendrán la consideración de:",
+  "a": "Autoridad sanitaria en el ejercicio de sus funciones",
+  "b": "Agentes de la autoridad",
+  "c": "Personal con funciones de inspección y control",
+  "d": "Responsables directos de las explotaciones ganaderas",
+  "correct": "D",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 15 reconoce a los veterinarios oficiales como autoridad sanitaria y agentes de la autoridad, pero no como responsables de las explotaciones.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 15"
+},
+{
+  "question": "De acuerdo con el artículo 16 de la Ley 8/2003, NO estará incluida entre las funciones de los veterinarios oficiales:",
+  "a": "La inspección sanitaria de animales y explotaciones",
+  "b": "La adopción de medidas sanitarias previstas en la normativa",
+  "c": "La gestión empresarial de las explotaciones ganaderas",
+  "d": "La vigilancia y control de enfermedades animales",
+  "correct": "C",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 16 enumera funciones de inspección, control y adopción de medidas sanitarias, excluyendo cualquier función de gestión empresarial.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 16"
+},
+{
+  "question": "Según el artículo 17 de la Ley 8/2003, los titulares de explotaciones NO estarán obligados a:",
+  "a": "Permitir el acceso a las autoridades competentes",
+  "b": "Facilitar información sanitaria requerida",
+  "c": "Adoptar medidas sanitarias ordenadas",
+  "d": "Determinar unilateralmente las medidas oficiales a aplicar",
+  "correct": "D",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 17 impone obligaciones de colaboración y cumplimiento, pero no permite a los titulares determinar las medidas oficiales.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 17"
+},
+{
+  "question": "Conforme al artículo 18 de la Ley 8/2003, NO se considerará infracción administrativa:",
+  "a": "El incumplimiento de las obligaciones establecidas en la ley",
+  "b": "La obstrucción a la labor inspectora",
+  "c": "La adopción de medidas sanitarias ordenadas por la autoridad",
+  "d": "La falta de comunicación de enfermedades de declaración obligatoria",
+  "correct": "C",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 18 tipifica como infracción el incumplimiento u obstrucción, no la adopción de medidas sanitarias ordenadas.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 18"
+},
+{
+  "question": "De acuerdo con el artículo 19 de la Ley 8/2003, las medidas cautelares NO podrán adoptarse:",
+  "a": "Cuando exista riesgo para la sanidad animal",
+  "b": "Para proteger la salud pública",
+  "c": "Con carácter previo a la resolución del procedimiento",
+  "d": "Sin motivación ni justificación sanitaria",
+  "correct": "D",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 19 exige que las medidas cautelares estén motivadas y justificadas por riesgos sanitarios.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 19"
+},
+{
+  "question": "Según el artículo 20 de la Ley 8/2003, NO se incluirá entre las medidas administrativas posibles:",
+  "a": "La inmovilización de animales",
+  "b": "La clausura temporal de instalaciones",
+  "c": "La suspensión de actividades",
+  "d": "La exención automática de responsabilidad por incumplimientos",
+  "correct": "D",
+  "category": "🦠 Sanidad Animal",
+  "explanation": "El artículo 20 enumera medidas administrativas de control y restricción, sin contemplar exenciones automáticas de responsabilidad.",
+  "source": "Ley 8/2003, de sanidad animal, artículo 20"
 }
 ]
