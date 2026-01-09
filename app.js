@@ -2,6 +2,7 @@
 // ===== CONFIGURACIÓN ============================= 
 // ==================================================
 const MAX_QUESTIONS = 10;
+const APP_NAME = "VetTest";
 
 const QUESTION_FILES = [
   "questions_bienestar_animal.json",
@@ -259,7 +260,7 @@ function shareResult() {
 
   const categoryText = category === "all" ? "todas las categorías" : category;
 
-  const shareText = `📊 He conseguido ${score}/10 en VetOposiciones\n\n✅ Aciertos: ${correctCount}/${totalQuestions}\n📚 Categoría: ${categoryText}\n\n¿Te atreves a competir? 🩺`;
+  const shareText = `📊 He conseguido ${score}/10 en ${APP_NAME}\n\n✅ Aciertos: ${correctCount}/${totalQuestions}\n📚 Categoría: ${categoryText}\n\n¿Te atreves a superarlo? 🩺`;
 
   navigator.clipboard.writeText(shareText).then(
     () => {
